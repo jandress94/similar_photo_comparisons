@@ -11,12 +11,9 @@ import pandas as pd
 from tqdm import tqdm as tqdm
 
 from similar_photo_comparisons.constants import IMAGE_DIRECTORY, EMBEDDING_DIRECTORY, EMBEDDINGS_FILENAME
+from similar_photo_comparisons.utils import get_categories
+
 from similar_photo_comparisons.embedding_extract.embed_model import embed_img
-
-
-def get_categories(dataset_dir):
-    image_dir = os.path.join(dataset_dir, IMAGE_DIRECTORY)
-    return [c for c in os.listdir(image_dir) if os.path.isdir(os.path.join(image_dir, c))]
 
 
 def get_image_paths(dataset_dir, category):

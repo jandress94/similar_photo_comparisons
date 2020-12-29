@@ -7,5 +7,9 @@
 
 
 IMAGE_DIRECTORY = 'images'
+
 EMBEDDING_DIRECTORY = 'embeddings'
 EMBEDDINGS_FILENAME = 'embeddings.csv'
+
+SIMILAR_IMAGES_DIRECTORY = 'similar_images'
+SIMILAR_IMAGES_FILENAME = 'similar_images'
