@@ -23,6 +23,8 @@ def get_similar_images(dataset_dir, cat1, cat2, metric, cutoff):
     dists_df = pd.DataFrame(dists, columns=cat2_embeds_df.index, index=cat1_embeds_df.index).reset_index().rename(columns={'index': 'cat1_filepath'})
 
     dists_df = pd.melt(dists_df, id_vars=['cat1_filepath'], value_vars=cat2_embeds_df.index, var_name='cat2_filepath', value_name='distance')
+    dists_df['cat1'] = cat1
+    dists_df['cat2'] = cat2
     return dists_df[dists_df.distance <= cutoff]
 
 
