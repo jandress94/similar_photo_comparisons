@@ -28,7 +28,13 @@ def embed_img(image_filepath):
     if _model is None:
         _model = _create_model()
 
-    img = tf.image.decode_jpeg(tf.io.read_file(image_filepath))
+    if image_filepath.endswith('.jpeg'):
+        img = tf.image.decode_jpeg(tf.io.read_file(image_filepath))
+    elif image_filepath.endswith('.png'):
+        img = tf.image.decode_png(tf.io.read_file(image_filepath), channels=3)
+    else:
+        raise ValueError(f"Unknown filetype: {image_filepath}")
+    
     img = tf.expand_dims(img, axis=0)
 
     return _model(img)[0].numpy()

@@ -18,7 +18,7 @@ from similar_photo_comparisons.embedding_extract.embed_model import embed_img
 
 def get_image_paths(dataset_dir, category):
     category_image_dir = os.path.join(dataset_dir, IMAGE_DIRECTORY, category)
-    image_filenames = list(os.listdir(category_image_dir))
+    image_filenames = [f for f in os.listdir(category_image_dir) if f != '.DS_Store']
 
     return [os.path.join(category_image_dir, im_fn) for im_fn in image_filenames]
 
