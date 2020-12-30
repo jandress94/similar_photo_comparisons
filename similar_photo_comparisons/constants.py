@@ -13,3 +13,6 @@ EMBEDDINGS_FILENAME = 'embeddings.csv'
 
 SIMILAR_IMAGES_DIRECTORY = 'similar_images'
 SIMILAR_IMAGES_FILENAME = 'similar_images'
+
+RANKINGS_DIRECTORY = 'rankings'
+RANKINGS_FILENAME = 'rankings.csv'
